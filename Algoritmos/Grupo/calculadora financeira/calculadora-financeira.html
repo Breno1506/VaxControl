@@ -7,10 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 
-<body>
+<body class="body">
 
 
-    <div>
+    <div class="div">
         <h1 class="titulo">Calculadora Financeira VaxControl</h1>
         <label for="ipt_qtdDoses">Insira a quantidade de vacinas armazenadas por lote:</label>
         <input class="input" type="text" id="ipt_qtdDoses">
@@ -20,8 +20,12 @@
         <br><br>
         <label for="ipt_valorDose">Insira o valor de cada dose:</label>
         <input class="input" type="text" id="ipt_valorDose">
-        <br><br>
-        <button onclick="calcular()">Simular Valores</button>
+        <br><br><br><br>
+        
+        <div class="container">
+            <button class="button" onclick="calcular()">Simular Valores</button>
+        </div>
+
         <div id="div_msg"></div>
     </div>
 
