@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 
+<body>
+
 
     <div>
         <h1 class="titulo">Calculadora Financeira VaxControl</h1>
-        <label for="ipt_qtdDoselote">Insira a quantidade de doses por lote:</label>
-        <input class="input" type="text" id="ipt_qtdDoselote">
+        <label for="ipt_qtdDoses">Insira a quantidade de vacinas armazenadas por lote:</label>
+        <input class="input" type="text" id="ipt_qtdDoses">
         <br><br>
-        <label  for="ipt_qtdArmazenado">Insira a quantidade de lotes armazenados:</label>
-        <input class="input" type="text" id="ipt_qtdArmazenado">
+        <label for="ipt_qtdLote">Insira a quantidade de lotes mantidos simultaneamente na câmara fria:</label>
+        <input class="input" type="text" id="ipt_qtdLote">
         <br><br>
         <label for="ipt_valorDose">Insira o valor de cada dose:</label>
         <input class="input" type="text" id="ipt_valorDose">
         <br><br>
-        <button onclick="calcular">Simular Valores</button>
+        <button onclick="calcular()">Simular Valores</button>
         <div id="div_msg"></div>
     </div>
-   
+
 </body>
+
 </html>
 </head>
 
 <script>
-    let qtdDoseLote = Number(ipt_qtdDoseLote.value);
-    let qtdArmazenado = Number(ipt_qtdArmazenado.value);
-    let valorDose = Number(ipt_valorDose);
-</script>
 
+    function calcular() {
+
+        let taxa_descarte = 0.414;
+        let quantidade_vacina = Number(ipt_qtdDoses.value);
+        let quantidade_lotes = Number(ipt_qtdLote.value);
+        let valor_dose = Number(ipt_valorDose.value);
+
+        let qntd_total = quantidade_vacina * quantidade_lotes;
+        let doses_perdidas = (qntd_total * taxa_descarte).toFixed(0);
+
+        let valor_perdido = Number(doses_perdidas * valor_dose);
+        
+        div_msg.innerHTML = `<br>Atualmente, seu armazenamento apresenta um risco projetado de perda de <b>${doses_perdidas}</b> doses. Isso representa um prejuízo invisível de <b>R$${valor_perdido.toFixed(2)}</b> em seu estoque. Ao implementar nossa solução de monitoramento contínuo, este é o valor exato que sua operação deixará de perder, transformando risco em receita garantida.`;
+
+    }
+</script>
