@@ -10,8 +10,8 @@
 <body class="body">
 
 
-    <div class="div">
-        <h1 class="titulo">Calculadora Financeira VaxControl</h1>
+    <h1 class="titulo">Calculadora Financeira VaxControl</h1>
+    <div class="div_textos">
         <label for="ipt_qtdDoses">Insira a quantidade de vacinas armazenadas por lote:</label>
         <input class="input" type="text" id="ipt_qtdDoses">
         <br><br>
@@ -20,14 +20,16 @@
         <br><br>
         <label for="ipt_valorDose">Insira o valor de cada dose:</label>
         <input class="input" type="text" id="ipt_valorDose">
-        <br><br><br><br>
-        
-        <div class="container">
-            <button class="button" onclick="calcular()">Simular Valores</button>
-        </div>
-
-        <div id="div_msg"></div>
     </div>
+
+    <br>
+
+    <div class="container">
+        <button class="button" onclick="calcular()">Simular Valores</button>
+    </div>
+
+    <div id="div_msg"></div>
+
 
 </body>
 
@@ -47,7 +49,7 @@
         let doses_perdidas = (qntd_total * taxa_descarte).toFixed(0);
 
         let valor_perdido = Number(doses_perdidas * valor_dose);
-        
+
         div_msg.innerHTML = `<br>Atualmente, seu armazenamento apresenta um risco projetado de perda de <b>${doses_perdidas}</b> doses. Isso representa um prejuízo invisível de <b>R$${valor_perdido.toFixed(2)}</b> em seu estoque. Ao implementar nossa solução de monitoramento contínuo, este é o valor exato que sua operação deixará de perder, transformando risco em receita garantida.`;
 
     }
