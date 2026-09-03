@@ -1,0 +1,31 @@
+.titulo {
+    color: black; /* Cor do texto */
+    font-size: 40px; /* tamanho */
+    font-family: Arial, Helvetica, sans-serif ; /*fonte*/
+    text-align: center; /*alinhamento*/
+    font-weight: bold; /*espessura*/
+    margin-bottom: 40px; /*espaço baixo*/
+    text-shadow: 2px 2px 4px aquamarine; /*sombreamento*/
+  
+}
+
+.body {
+    background-color: azure; /*cor do fundo */
+    font-family: Arial, Helvetica, sans-serif; /*fonte*/
+    margin: 40px; /*margem da pagina toda*/
+}
+
+.input {
+    width: 100px; /* largura*/
+    padding: 12px;
+    border: none;
+    border-radius: 10px; /*arredondamento da borda*/
+    font-size: 15px; /* altura*/
+    background-color: #f2f2f2; /*cor do fundo do input*/
+}
+
+.input:focus {
+    background-color: #f2f2f2; /*cor do fundo do input quando selecionado*/
+    border: 2px solid #6c63ff; /*cor da borda quando selecionada*/
+    box-shadow: 0 0 8px #6c63ff; /* sombra da borda quando selecionada*/
+}
