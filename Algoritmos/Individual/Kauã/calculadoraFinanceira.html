@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Calculadora Financeira VaxControl</h2>
+    <label for="ipt_qtdVacinas">Insira a quantidade de vacinas armazenadas:</label>
+    <input type="text" id="ipt_qtdVacinas">
+<br>
+    <label for="ipt_valorVacina">Insira o valor de cada vacina:</label>
+    <input type="text" id="ipt_valorVacina">
+    
+<br>
+    <button onclick="calcular()">Simular valores</button>
+<br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    
+    
+    function calcular(){
+        let qtdVacinas = Number(ipt_qtdVacinas.value);
+        let valorVac = Number(ipt_valorVacina.value);
+
+        let valorLote = qtdVacinas * valorVac;
+        let qtdLotesArm = qtdVacinas / 100; // 1 lote = 100 unidades
+        
+        div_mensagem.innerHTML = `Atualmente, o seu estoque apresenta um risco de perder até
+        R$${valorLote.toFixed(2)} Reais, o que corresponde o prejuízo de até ${qtdVacinas} unidades de vacinas. <br>
+        Tendo ${qtdLotesArm.toFixed(1)} lotes armazenados.`;
+    }
+</script>
