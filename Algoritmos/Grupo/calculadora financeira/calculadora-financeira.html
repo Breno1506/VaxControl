@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body class="body">
-    
+    <link rel="stylesheet" href="style.css">
+
+
     <div>
         <h1 class="titulo">Calculadora Financeira VaxControl</h1>
-        <label for="ipt_custodose">Insira a quantidade de doses por lote:</label>
-        <input class="input" type="text" id="ipt_custodose">
+        <label for="ipt_qtdDoselote">Insira a quantidade de doses por lote:</label>
+        <input class="input" type="text" id="ipt_qtdDoselote">
         <br><br>
         <label  for="ipt_qtdArmazenado">Insira a quantidade de lotes armazenados:</label>
         <input class="input" type="text" id="ipt_qtdArmazenado">
         <br><br>
-        <label for="ipt_percentualAtual">Insira o percentual médio de perda por falha de refrigeração:</label>
-        <input class="input" type="text" id="ipt_percPerda">
-        <br>
-        <div id="div_result"></div>
+        <label for="ipt_valorDose">Insira o valor de cada dose:</label>
+        <input class="input" type="text" id="ipt_valorDose">
+        <br><br>
+        <button onclick="calcular">Simular Valores</button>
+        <div id="div_msg"></div>
     </div>
-    
+   
 </body>
 </html>
+</head>
+
+<script>
+    let qtdDoseLote = Number(ipt_qtdDoseLote.value);
+    let qtdArmazenado = Number(ipt_qtdArmazenado.value);
+    let valorDose = Number(ipt_valorDose);
+</script>
+
