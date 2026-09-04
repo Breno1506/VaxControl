@@ -175,7 +175,7 @@ INSERT INTO sensor (posicao_interna, status_, id_camara) VALUES
 ('Ponto mais distante', 'ativo', 13);
 
 
-INSERT INTO leitura (temperatura, umidade, id_sensor) VALUES
+INSERT INTO leitura (temperatura, id_sensor) VALUES
 -- Leituras da Câmara 1 (Sensores 1 a 4)
 (7.80, 1), -- Sensor da porta (mais quente)
 (4.50, 2), -- Sensor vacina 1 (normal)
@@ -214,3 +214,39 @@ INSERT INTO leitura (temperatura, umidade, id_sensor) VALUES
 
 -- (TEMPERATURA IDEAL DAS VACINAS HPV 2°C A 8°C) -- UTILIZAR O CONCAT X°C EM TODOS SELECTS
 -- TENTAR FAZER UM SELECT CONCATENANDO OU USANDO OPERAÇÕES ARITMÉTICAS
+
+-- SELECTS
+
+-- USUARIO
+SELECT id, nome_completo, email, cpf, acesso FROM usuario;
+
+-- EMPRESA
+SELECT * FROM empresa;
+
+-- CÂMARA
+SELECT 
+id, 
+identificacao AS nome_da_camara, 
+CONCAT(comprimento_metros, 'M') AS comprimento_metros, 
+CONCAT(temp_minima, '°C'),
+CONCAT(temp_maxima, '°C') 
+FROM camara;
+
+-- SENSOR
+SELECT 
+id,
+posicao_interna AS localização,
+status_ 
+FROM sensor WHERE status_='ativo';
+
+-- LEITURA
+SELECT 
+id,
+CONCAT (temperatura,'°C') AS temperatura,
+DATE_FORMAT(dtRegistros, '%d/%m/%Y %H:%i:%s') AS 'data do registro'
+FROM leitura;
+
+
+
+
+
