@@ -69,151 +69,123 @@ INSERT INTO empresa VALUES
 SELECT * FROM empresa;
 
 INSERT INTO camara (identificacao, comprimento_metros, id_empresa) VALUES
-('Câmara 01', 13, 1),
+('Câmara 01', 10, 1),
 ('Câmara 02', 5, 1),
 ('Câmara 01', 5, 2),
 ('Câmara 03', 10, 1),
 ('Câmara 01', 15, 3),
-('Câmara 02', 20, 3),
 ('Câmara 01', 10, 4),
-('Câmara 01', 30, 5),
+('Câmara 01', 5, 5),
 ('Câmara 01', 5, 6),
 ('Câmara 02', 10, 6),
-('Câmara 01', 50, 7),
-('Câmara 02', 20, 7),
-('Câmara 03', 10, 7);
+('Câmara 01', 10, 7),
+('Câmara 02', 5, 7);
 
 SELECT * FROM camara;
 
 INSERT INTO sensor (posicao_interna, status_, id_camara) VALUES
--- Câmara 01, empresa 1 (13m = 4 sensores - IDs 1 a 4)
+-- Câmara 01 - Empresa 1 - 10m = 4 sensores
 ('Próximo à porta', 'ativo', 1),
 ('Próximo às vacinas 1', 'ativo', 1),
 ('Próximo às vacinas 2', 'ativo', 1),
-('Ponto mais distante', 'ativo', 1),
-
--- Câmara 02, empresa 1 (5m = 2 sensores - IDs 5 e 6)
+('Ponto mais distante', 'concerto', 1),
+-- Câmara 02 - Empresa 1 - 5m = 2 sensores
 ('Próximo à porta', 'ativo', 2),
 ('Próximo às vacinas', 'ativo', 2),
-
--- Câmara 01, empresa 2 (5m = 2 sensores - IDs 7 e 8)
+-- Câmara 01 - Empresa 2 - 5m = 2 sensores
 ('Próximo à porta', 'ativo', 3),
 ('Próximo às vacinas', 'ativo', 3),
-
--- Câmara 03, empresa 1 (10m = 4 sensores - IDs 9 a 12)
-('Próximo à porta', 'ativo', 4),
+-- Câmara 03 - Empresa 1 - 10m = 4 sensores
+('Próximo à porta', 'concerto', 4),
 ('Próximo às vacinas 1', 'ativo', 4),
 ('Próximo às vacinas 2', 'ativo', 4),
 ('Ponto mais distante', 'ativo', 4),
-
--- Câmara 01, empresa 3 (15m = 4 sensores - IDs 13 a 16)
+-- Câmara 01 - Empresa 3 - 15m = 4 sensores
 ('Próximo à porta', 'ativo', 5),
 ('Próximo às vacinas 1', 'ativo', 5),
-('Próximo às vacinas 2', 'ativo', 5),
+('Próximo às vacinas 2', 'inativo', 5),
 ('Ponto mais distante', 'ativo', 5),
-
--- Câmara 02, empresa 3 (20m = 6 sensores - IDs 17 a 22)
+-- Câmara 01 - Empresa 4 - 10m = 4 sensores
 ('Próximo à porta', 'ativo', 6),
 ('Próximo às vacinas 1', 'ativo', 6),
-('Próximo às vacinas 2', 'ativo', 6),
-('Próximo às vacinas 3', 'ativo', 6),
-('Próximo às vacinas 4', 'ativo', 6),
+('Próximo às vacinas 2', 'inativo', 6),
 ('Ponto mais distante', 'ativo', 6),
-
--- Câmara 01, empresa 4 (10m = 4 sensores - IDs 23 a 26)
+-- Câmara 01 - Empresa 5 - 5m = 2 sensores 
 ('Próximo à porta', 'ativo', 7),
-('Próximo às vacinas 1', 'ativo', 7),
-('Próximo às vacinas 2', 'ativo', 7),
-('Ponto mais distante', 'ativo', 7),
-
--- Câmara 01, empresa 5 (30m = 8 sensores - IDs 27 a 34)
+('Próximo às vacinas', 'ativo', 7),
+-- Câmara 01 - Empresa 6 - 5m = 2 sensores
 ('Próximo à porta', 'ativo', 8),
-('Próximo às vacinas 1', 'ativo', 8),
-('Próximo às vacinas 2', 'ativo', 8),
-('Próximo às vacinas 3', 'ativo', 8),
-('Próximo às vacinas 4', 'ativo', 8),
-('Próximo às vacinas 5', 'ativo', 8),
-('Próximo às vacinas 6', 'ativo', 8),
-('Ponto mais distante', 'ativo', 8),
-
--- Câmara 01, empresa 6 (5m = 2 sensores - IDs 35 e 36)
+('Próximo às vacinas', 'ativo', 8),
+-- Câmara 02 - Empresa 6 - 10m = 4 sensores 
 ('Próximo à porta', 'ativo', 9),
-('Próximo às vacinas', 'ativo', 9),
-
--- Câmara 02, empresa 6 (10m = 4 sensores - IDs 37 a 40)
-('Próximo à porta', 'ativo', 10),
+('Próximo às vacinas 1', 'inativo', 9),
+('Próximo às vacinas 2', 'ativo', 9),
+('Ponto mais distante', 'ativo', 9),
+-- Câmara 01 - Empresa 7 - 10m = 4 sensores
+('Próximo à porta', 'inativo', 10),
 ('Próximo às vacinas 1', 'ativo', 10),
 ('Próximo às vacinas 2', 'ativo', 10),
 ('Ponto mais distante', 'ativo', 10),
-
--- Câmara 01, empresa 7 (50m = 12 sensores - IDs 41 a 52)
+-- Câmara 02 / Empresa 7 - 5m = 2 sensores 
 ('Próximo à porta', 'ativo', 11),
-('Próximo às vacinas 1', 'ativo', 11),
-('Próximo às vacinas 2', 'ativo', 11),
-('Próximo às vacinas 3', 'ativo', 11),
-('Próximo às vacinas 4', 'ativo', 11),
-('Próximo às vacinas 5', 'ativo', 11),
-('Próximo às vacinas 6', 'ativo', 11),
-('Próximo às vacinas 7', 'ativo', 11),
-('Próximo às vacinas 8', 'ativo', 11),
-('Próximo às vacinas 9', 'ativo', 11),
-('Próximo às vacinas 10', 'ativo', 11),
-('Ponto mais distante', 'ativo', 11),
-
--- Câmara 02, empresa 7 (20m = 6 sensores - IDs 53 a 58)
-('Próximo à porta', 'ativo', 12),
-('Próximo às vacinas 1', 'ativo', 12),
-('Próximo às vacinas 2', 'ativo', 12),
-('Próximo às vacinas 3', 'ativo', 12),
-('Próximo às vacinas 4', 'ativo', 12),
-('Ponto mais distante', 'ativo', 12),
-
--- Câmara 03, Empresa 7 (10m = 4 sensores - IDs 59 a 62)
-('Próximo à porta', 'ativo', 13),
-('Próximo às vacinas 1', 'ativo', 13),
-('Próximo às vacinas 2', 'ativo', 13),
-('Ponto mais distante', 'ativo', 13);
-
+('Próximo às vacinas', 'ativo', 11);
 
 INSERT INTO leitura (temperatura, id_sensor) VALUES
--- Leituras da Câmara 1 (Sensores 1 a 4)
-(7.80, 1), -- Sensor da porta (mais quente)
-(4.50, 2), -- Sensor vacina 1 (normal)
-(4.20, 3), -- Sensor vacina 2 (normal)
-(2.30, 4), -- Sensor distante (mais frio)
+-- Câmara 01 - Empresa 1 (Sensores 1 a 4)
+(7.80, 1), -- Porta (mais quente)
+(4.50, 2), -- Vacinas (normal)
+(4.20, 3), -- Vacinas (normal)
+(2.30, 4), -- Fundo (mais frio)
 
--- Leituras da Câmara 2 (Sensores 5 e 6)
-(6.50, 5), -- Sensor da porta
-(3.80, 6), -- Sensor vacina
+-- Câmara 02 - Empresa 1 (Sensores 5 e 6)
+(6.50, 5), 
+(3.80, 6), 
 
--- Leituras da Câmara 3 (Sensores 7 e 8)
+-- Câmara 01 - Empresa 2 (Sensores 7 e 8)
 (7.10, 7), 
 (4.10, 8),
 
--- Leituras da Câmara 4 (Sensores 9 a 12)
+-- Câmara 03 - Empresa 1 (Sensores 9 a 12)
 (6.80, 9),
 (5.00, 10),
 (4.90, 11),
 (2.80, 12),
 
--- Leituras simulando a Câmara 11 gigante de 50 metros (Sensores 41 a 52)
-(8.20, 41), -- ALERTA - Porta aberta, passou de 8°C
-(6.50, 42),
-(5.80, 43),
-(5.50, 44),
-(5.10, 45),
-(4.80, 46),
-(4.50, 47),
-(4.00, 48),
-(3.50, 49),
-(3.10, 50),
-(2.50, 51),
-(1.80, 52); -- ALERTA - Ponto distante super resfriado, abaixo de 2°C
+-- Câmara 01 - Empresa 3 (Sensores 13 a 16)
+(8.20, 13), -- ALERTA - Porta aberta, acima de 8°C
+(5.20, 14),
+(4.80, 15),
+(2.50, 16),
 
+-- Câmara 01 - Empresa 4 (Sensores 17 a 20)
+(7.50, 17),
+(5.50, 18),
+(5.10, 19),
+(3.20, 20),
 
+-- Câmara 01 - Empresa 5 (Sensores 21 e 22)
+(6.90, 21),
+(4.80, 22),
 
--- (TEMPERATURA IDEAL DAS VACINAS HPV 2°C A 8°C) -- UTILIZAR O CONCAT X°C EM TODOS SELECTS
--- TENTAR FAZER UM SELECT CONCATENANDO OU USANDO OPERAÇÕES ARITMÉTICAS
+-- Câmara 01 - Empresa 6 (Sensores 23 e 24)
+(6.60, 23),
+(4.00, 24),
+
+-- Câmara 02 - Empresa 6 (Sensores 25 a 28)
+(7.00, 25),
+(5.30, 26),
+(4.60, 27),
+(2.70, 28),
+
+-- Câmara 01 - Empresa 7 (Sensores 29 a 32)
+(6.90, 29),
+(4.80, 30),
+(4.50, 31),
+(1.80, 32), -- ALERTA - Ponto distante abaixo de 2°C
+
+-- Câmara 02 - Empresa 7 (Sensores 33 e 34)
+(6.40, 33),
+(4.20, 34);
 
 -- SELECTS
 
