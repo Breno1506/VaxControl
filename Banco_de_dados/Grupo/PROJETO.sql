@@ -48,12 +48,12 @@ id_sensor INT -- LIGAÇÃO COM O SENSOR QUE FEZ A MEDIÇÃO (SEM USAR FOREIGN KE
 
 INSERT INTO usuario (nome_completo, email, senha, cpf, acesso) VALUES
 ('Bianca Ramos da Silva', 'bianca_terraria@gmail.com', 'terraria_123', '59627508501', 'Administrador'), 
-('Vinicius Henrique de Oliveira', 'vinic-oliver2@hotmail.com', 'Sabonete67', '54380282250', 'Cliente'),
+('Vinicius Henrique de Oliveira', 'vinic-oliver2@hotmail.com', 'Sabonete67', '54380282250', 'Cliente'), -- primeiro cliente ( 1 empresa )
 ('Kauã Santos Pacce', 'kauaSantos@gmail.com', '123456789', '87264581230', 'Suporte'),
 ('Breno de Oliveira Augusto', 'Tutu@hotmail.com', 'farinha123', '65498028850', 'Normal'),
-('Pedro Luca Santos', 'PedroLuca@yahoo.com', 'Pedrinho132', '44607324823', 'Administrador'),
-('Gabriel Pereira Lima', 'biel-pereira@gmail.com', 'skate333', '54638228850', 'Normal'),
-('Daniel Henrique Ferreira', 'Daniel_marlon@hotmail.com', 'marmita5kg', '45320853790', 'Cliente');
+('Pedro Luca Santos', 'PedroLuca@yahoo.com', 'Pedrinho132', '44607324823', 'Cliente'), -- segundo cliente ( 1 empresa )
+('Gabriel Pereira Lima', 'biel-pereira@gmail.com', 'skate333', '54638228850', 'Cliente'), -- terceiro cliente ( 1 empresa )
+('Daniel Henrique Ferreira', 'Daniel_marlon@hotmail.com', 'marmita5kg', '45320853790', 'Cliente'); -- quarto cliente ( 1 empresa )
 
 SELECT * FROM usuario;
 
@@ -61,10 +61,7 @@ INSERT INTO empresa VALUES
 (DEFAULT, 'DHL Supply Chain', '02836056000106', '119856462090'),
 (DEFAULT, 'Luft Logistics Ltda', '87689402000123', '119536762890'),
 (DEFAULT, 'Nippon Express', '51595908000126', '119256432596'),
-(DEFAULT, 'Vivalog', '07803647000109', '119736922504'),
-(DEFAULT, 'R.V. Imola', '05366444000169', '119980462090'),
-(DEFAULT, 'VTCLOG', '24893687000108', '119556462009'),
-(DEFAULT, 'Ativa Logística', '01125797000116', '119576319010');
+(DEFAULT, 'Vivalog', '07803647000109', '119736922504');
 
 SELECT * FROM empresa;
 
@@ -72,14 +69,8 @@ INSERT INTO camara (identificacao, comprimento_metros, id_empresa) VALUES
 ('Câmara 01', 10, 1),
 ('Câmara 02', 5, 1),
 ('Câmara 01', 5, 2),
-('Câmara 03', 10, 1),
-('Câmara 01', 15, 3),
-('Câmara 01', 10, 4),
-('Câmara 01', 5, 5),
-('Câmara 01', 5, 6),
-('Câmara 02', 10, 6),
-('Câmara 01', 10, 7),
-('Câmara 02', 5, 7);
+('Câmara 01', 10, 3),
+('Câmara 01', 5, 4);
 
 SELECT * FROM camara;
 
@@ -95,40 +86,14 @@ INSERT INTO sensor (posicao_interna, status_, id_camara) VALUES
 -- Câmara 01 - Empresa 2 - 5m = 2 sensores
 ('Próximo à porta', 'ativo', 3),
 ('Próximo às vacinas', 'ativo', 3),
--- Câmara 03 - Empresa 1 - 10m = 4 sensores
-('Próximo à porta', 'concerto', 4),
-('Próximo às vacinas 1', 'ativo', 4),
-('Próximo às vacinas 2', 'ativo', 4),
-('Ponto mais distante', 'ativo', 4),
--- Câmara 01 - Empresa 3 - 15m = 4 sensores
-('Próximo à porta', 'ativo', 5),
-('Próximo às vacinas 1', 'ativo', 5),
-('Próximo às vacinas 2', 'inativo', 5),
-('Ponto mais distante', 'ativo', 5),
--- Câmara 01 - Empresa 4 - 10m = 4 sensores
+-- Câmara 01 - Empresa 3 - 10m = 4 sensores
 ('Próximo à porta', 'ativo', 6),
 ('Próximo às vacinas 1', 'ativo', 6),
 ('Próximo às vacinas 2', 'inativo', 6),
 ('Ponto mais distante', 'ativo', 6),
--- Câmara 01 - Empresa 5 - 5m = 2 sensores 
+-- Câmara 01 - Empresa 4 - 5m = 2 sensores 
 ('Próximo à porta', 'ativo', 7),
-('Próximo às vacinas', 'ativo', 7),
--- Câmara 01 - Empresa 6 - 5m = 2 sensores
-('Próximo à porta', 'ativo', 8),
-('Próximo às vacinas', 'ativo', 8),
--- Câmara 02 - Empresa 6 - 10m = 4 sensores 
-('Próximo à porta', 'ativo', 9),
-('Próximo às vacinas 1', 'inativo', 9),
-('Próximo às vacinas 2', 'ativo', 9),
-('Ponto mais distante', 'ativo', 9),
--- Câmara 01 - Empresa 7 - 10m = 4 sensores
-('Próximo à porta', 'inativo', 10),
-('Próximo às vacinas 1', 'ativo', 10),
-('Próximo às vacinas 2', 'ativo', 10),
-('Ponto mais distante', 'ativo', 10),
--- Câmara 02 / Empresa 7 - 5m = 2 sensores 
-('Próximo à porta', 'ativo', 11),
-('Próximo às vacinas', 'ativo', 11);
+('Próximo às vacinas', 'ativo', 7);
 
 INSERT INTO leitura (temperatura, id_sensor) VALUES
 -- Câmara 01 - Empresa 1 (Sensores 1 a 4)
@@ -140,52 +105,22 @@ INSERT INTO leitura (temperatura, id_sensor) VALUES
 -- Câmara 02 - Empresa 1 (Sensores 5 e 6)
 (6.50, 5), 
 (3.80, 6), 
-
 -- Câmara 01 - Empresa 2 (Sensores 7 e 8)
 (7.10, 7), 
 (4.10, 8),
-
 -- Câmara 03 - Empresa 1 (Sensores 9 a 12)
 (6.80, 9),
 (5.00, 10),
 (4.90, 11),
 (2.80, 12),
-
 -- Câmara 01 - Empresa 3 (Sensores 13 a 16)
 (8.20, 13), -- ALERTA - Porta aberta, acima de 8°C
 (5.20, 14),
 (4.80, 15),
 (2.50, 16),
-
--- Câmara 01 - Empresa 4 (Sensores 17 a 20)
-(7.50, 17),
-(5.50, 18),
-(5.10, 19),
-(3.20, 20),
-
--- Câmara 01 - Empresa 5 (Sensores 21 e 22)
+-- Câmara 01 - Empresa 5 (Sensores 17 e 18)
 (6.90, 21),
-(4.80, 22),
-
--- Câmara 01 - Empresa 6 (Sensores 23 e 24)
-(6.60, 23),
-(4.00, 24),
-
--- Câmara 02 - Empresa 6 (Sensores 25 a 28)
-(7.00, 25),
-(5.30, 26),
-(4.60, 27),
-(2.70, 28),
-
--- Câmara 01 - Empresa 7 (Sensores 29 a 32)
-(6.90, 29),
-(4.80, 30),
-(4.50, 31),
-(1.80, 32), -- ALERTA - Ponto distante abaixo de 2°C
-
--- Câmara 02 - Empresa 7 (Sensores 33 e 34)
-(6.40, 33),
-(4.20, 34);
+(4.80, 22);
 
 -- SELECTS
 
