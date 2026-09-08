@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira</title>
+</head>
+<body>
+<h1>VaxControl</h1>
+<h2>Calculadora fincanceira</h2>
+<label for="iptQtdCamaras">Quantos equipamentos de refrigeração o local possui ?</label> <br>
+<input type="number" value="2" id="iptQtdCamaras"> <br>
+<label for="iptQtdCapacidade">Qual capacidade Média de Doses por Equipamento ?</label> <br>
+<input type="number" value="200" id="iptQtdCapacidade"> <br>
+<label for="iptPrecoDose">Qual Preço médio por Dose ?</label> <br>
+<input type="number" value="100" id="iptPrecoDose"> <br>
+<label for="iptQtdOcorrencias">Quantas ocorrências de falha por ano você tem ?</label> <br>
+<input type="number" value="10" id="iptQtdOcorrencias"> <br>
+<button onclick="btnVerificar()">Verificar prejuizo</button>
+<div id="divMsg"></div>
+</body>
+</html>
+<script>
+    function btnVerificar() {
+        let camaras = Number(iptQtdCamaras.value);
+        let capacidade = Number(iptQtdCapacidade.value);
+        let precoDose = Number(iptPrecoDose.value);
+        let ocorrencias = Number(iptQtdOcorrencias.value);
+
+        let valorTotal = camaras * capacidade * precoDose;
+        let prejuizoAnual = ocorrencias * (capacidade * precoDose);
+        let perdaMitigada = prejuizoAnual * 0.95;
+
+        divMsg.innerHTML = `
+        Valor do Estoque Armazenado: R$${valorTotal}. <br>
+        Prejuízo Anual Potencial (Destaque em Vermelho): <label style="color: red;">R$${prejuizoAnual}.</label> <br>
+        Dinheiro Salvo pelo Sistema (Destaque em Verde): <label style="color: green;">R$${perdaMitigada}.</label> <br>
+        `
+    }
+</script>
