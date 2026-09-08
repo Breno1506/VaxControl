@@ -5,12 +5,13 @@
     text-align: center; /*alinhamento*/
     font-weight: bold; /*espessura*/
     margin-bottom: 40px; /*espaço baixo*/
-   
-  
+    -webkit-text-stroke-width: 1px; /* Largura do contorno */
+    -webkit-text-stroke-color: black; /* Cor do contorno */   
 }
 
 .body {
-    background-color: #110b52; /*cor do fundo */
+    background-image: url(b626706b-9922-421a-87b4-d6127b30280a.png);
+    background-size: cover;
     font-size: 20px; /*tamanho da fonte*/
     font-family: Arial, Helvetica, sans-serif; /*fonte*/
     margin: 40px; /*margem da pagina toda*/
@@ -54,7 +55,12 @@
 }
 
 .msg {
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
+    width: 1000px;
+    height: 100px;
+    margin: auto;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
     font-size: 20px;
 }
