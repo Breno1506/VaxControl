@@ -1,17 +1,14 @@
 .titulo {
-    color: white; /* Cor do texto */
+    color: black; /* Cor do texto */
     font-size: 40px; /* tamanho */
     font-family: Arial, Helvetica, sans-serif ; /*fonte*/
     text-align: center; /*alinhamento*/
     font-weight: bold; /*espessura*/
-    margin-bottom: 40px; /*espaço baixo*/
-    -webkit-text-stroke-width: 1px; /* Largura do contorno */
-    -webkit-text-stroke-color: black; /* Cor do contorno */   
+    margin-bottom: 40px; /*espaço baixo*/   
 }
 
 .body {
-    background-image: url(b626706b-9922-421a-87b4-d6127b30280a.png);
-    background-size: cover;
+    background-image: url(Calculadora_Financeira.jpg);
     font-size: 20px; /*tamanho da fonte*/
     font-family: Arial, Helvetica, sans-serif; /*fonte*/
     margin: 40px; /*margem da pagina toda*/
