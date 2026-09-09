@@ -31,9 +31,35 @@ CREATE TABLE sensor (
     status_sensor VARCHAR(15)
 );
 
-CREATE TABLE histórico (
+CREATE TABLE historico (
     id INT PRIMARY KEY AUTO_INCREMENT,
     temperatura DECIMAL(4,2),
     umidade DECIMAL(4,2),
     dt_hora DATETIME
 );
+
+INSERT INTO empresa VALUES 
+(NULL, 'Posto de Saude Central', '12345678000199', '11999998888');
+
+INSERT INTO camara VALUES 
+(NULL, 'Camara Vacina HPV', 5.50, 2.00, 8.00, 1);
+
+INSERT INTO sensor VALUES 
+(NULL, 'Lado Esquerdo', 'Ativo', 1);
+
+INSERT INTO historico VALUES 
+(NULL, 10.50, 50.00, '2026-03-08 14:00:00', 1),
+(NULL, 5.00, 48.00, '2026-03-08 14:05:00', 1);
+
+SELECT 
+	id, 
+    CONCAT(temperatura, '°C') AS temperatura_formatada,
+    CONCAT(umidade, '%') AS umidade_formatada,
+    dt_hora 
+FROM leitura;
+
+SELECT 
+    id,
+    temperatura,
+    (temperatura - 8.00) AS diferenca_da_temp_maxima
+FROM leitura;
