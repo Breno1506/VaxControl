@@ -26,7 +26,6 @@ CREATE TABLE camara (
     comprimento DECIMAL(4,2),
     temp_min DECIMAL(4,2),
     temp_max DECIMAL(4,2),
-    fk_empresa INT
 );
 
 -- Tabela de sensor simples (sem validação de status)
@@ -34,7 +33,6 @@ CREATE TABLE sensor (
     id INT PRIMARY KEY AUTO_INCREMENT,
     posicao VARCHAR(30),
     status_sensor VARCHAR(15),
-    fk_camara INT
 );
 
 -- Tabela de leituras simples
@@ -43,7 +41,6 @@ CREATE TABLE leitura (
     temperatura DECIMAL(4,2),
     umidade DECIMAL(4,2),
     dt_hora DATETIME,
-    fk_sensor INT
 );
 
 -- Inserts de teste
