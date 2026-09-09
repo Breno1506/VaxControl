@@ -22,7 +22,7 @@
     font-size: 15px; /* tamanho */
 }
 
-.input:focus {
+.input:focus { /* Ao clicar na input */
     background-color: aliceblue; /*cor do fundo do input quando selecionado*/
     border: 2px solid #008FD3; /*cor da borda quando selecionada*/
     box-shadow: 0 0 5px #008FD3; /* sombra da borda quando selecionada*/
