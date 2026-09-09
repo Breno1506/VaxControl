@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora fincanceira VaxControl</title>
     <link rel="stylesheet" href="style.css">
 
 <body class="body">
@@ -50,7 +50,10 @@
 
         let valor_perdido = Number(doses_perdidas * valor_dose);
 
-        div_msg.innerHTML = `<br>Atualmente, seu armazenamento apresenta um risco projetado de perda de <b>${doses_perdidas}</b> doses. Isso representa um prejuízo invisível de <b>R$${valor_perdido.toFixed(2)}</b> em seu estoque. Ao implementar nossa solução de monitoramento contínuo, este é o valor exato que sua operação deixará de perder, transformando risco em receita garantida.`;
+        div_msg.innerHTML =
+        `Atualmente, seu armazenamento apresenta um risco projetado de perda de <b>${doses_perdidas}</b> doses.<br>
+         Isso representa um prejuízo invisível de <b>R$${valor_perdido.toFixed(2)}</b> em seu estoque. <br>
+         Ao implementar nossa solução de monitoramento contínuo, este é o valor estimado que sua operação deixará de perder, transformando risco em receita garantida.`;
 
     }
 </script>
