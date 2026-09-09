@@ -19,18 +19,17 @@
     padding: 12px;
     border: solid 1px #008FD3;
     border-radius: 10px; /*arredondamento da borda*/
-    font-size: 15px; /* altura*/
-    background-color: white; /*cor do fundo do input*/
+    font-size: 15px; /* tamanho */
 }
 
-.input:focus {
+.input:focus { /* Ao clicar na input */
     background-color: aliceblue; /*cor do fundo do input quando selecionado*/
     border: 2px solid #008FD3; /*cor da borda quando selecionada*/
     box-shadow: 0 0 5px #008FD3; /* sombra da borda quando selecionada*/
 }
 
 
-.container .button {
+.button {
     font-size: 18px;
     width: 150px;
     height: 50px;
@@ -52,16 +51,16 @@
 }
 
 .msg {
-        max-width: 1000px;
-        width: 90%;
-        min-height: 100px;
-        height: auto;
-        margin: 20px auto;
-        border-radius: 20px;
-        padding: 20px;
-        border: 1px solid black;
-        background-color: white;
-        font-size: 18px;
-        line-height: 1.5;
-        box-sizing: border-box;
+    max-width: 1000px; /* Máximo de largura definida */
+    width: 90%;
+    min-height: 100px; /* Minímo de altura definida */
+    height: auto;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 18px;
+    line-height: 1.5; /* espaçamento entre as linhas */
+    box-sizing: border-box; /* mantém o tamanho fixo da caixa */
 }
